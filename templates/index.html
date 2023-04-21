@@ -1,0 +1,187 @@
+{% extends 'base.html' %}
+{% block Content %}
+    {% load static  %}
+    <div class="bg-light">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">ZEON - Компьютерный клуб
+                </h1>
+                <p class="lead">Мы создаем киберспортивную среду для качественного отдыха, тренировок и проведения
+                    кибер-мероприятий.</p>
+                <form>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Поиск тарифов" aria-label="Поиск тарифов"
+                               aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Искать</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="bg-white">
+            <div class="container ">
+                <div class="ratio ratio-16x9">
+                    <div id="carouselExampleIndicators" class="carousel slide">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="{% static 'zeon/images/slaider.jpg' %}" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'zeon/images/slaider1.jpg' %}" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="{% static 'zeon/images/slaider2.jpg' %}" class="d-block w-100" alt="...">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Предыдущий</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                                data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Следующий</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-light">
+            <div class="container my-5 p-3">
+                <h2 class="text-center mb-4">Популярные тарифы</h2>
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card text-center">
+                            <img src="{% static 'zeon/images/default zal.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title ">1 час PC</h5>
+                                <p class="card-text">Целый час игры за пк</p>
+                                <a href="#" class="btn btn-primary">Купить за 80 руб.</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card text-center">
+                            <img src="{% static 'zeon/images/vip zal.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">1 час PC VIP</h5>
+                                <p class="card-text">Целый час игры за пк в vip зале</p>
+                                <a href="#" class="btn btn-primary">Купить за 110 руб.</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card text-center">
+                            <img src="{% static 'zeon/images/ps5.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">1 час PS5</h5>
+                                <p class="card-text">Целый час игры за PS5 в Lounge зоне</p>
+                                <a href="#" class="btn btn-primary">Купить за 250 руб.</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white">
+            <div class="container my-5">
+                <h2 class="text-center mb-4">Железо компьютеров</h2>
+                <div class="row">
+                    {% for computer in computers %}
+                    <div class="col-md-6  mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title">{ {computer.corpus}}</h3>
+                                <b>Процессор:</b>
+                                <p class="card-title">{ {computer.cpu}}</p>
+                                <b>Видеокарта:</b>
+                                <p class="card-title">{ {computer.gpu}}</p>
+                                <b>Оперативная память:</b>
+                                <p class="card-title">{ {computer.operativka}}</p>
+                                <b>Периферия:</b>
+                                <p class="card-title">{ {computer.perifiria}} </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="bg-light">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 py-3">
+                        <h3 class="text-center">Новости</h3>
+                    </div>
+                    <div class="col-12 col-md-6 p-3">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-5 py-3">
+                                    <img class="img-fluid py-3" height="100%" src="{% static 'zeon/images/novost1.jpg' %}"
+                                         class="img-fluid rounded-start p-3" alt="...">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Обновление мебели в обычном зале</h5>
+                                        <p class="card-text">мы улучшили компьютерные кресла для
+                                            более эргономичной работы и уменьшения нагрузки на спину и шею. Мы приобрели
+                                            новые
+                                            кресла, которые обеспечивают правильное положение тела
+                                            и уменьшают усталость при работе за компьютером. Это особенно важно для
+                                            людей,
+                                            которые
+                                            проводят много времени за компьютером, чтобы избежать болезненных ощущений в
+                                            спине, шее и
+                                            плечах.</p>
+                                        <p class="card-text"><small class="text-muted">Последнее обновление 3 мин.
+                                            назад</small>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 p-3">
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-5 py-3">
+                                    <img class="img-fluid py-3" height="100%" src="{% static 'zeon/images/novost.jpg' %}"
+                                         class="img-fluid rounded-start p-3" alt="...">
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Розыгрыш 3 тысяч рублей на учетную запись</h5>
+                                        <p class="card-text">мы решили провести розыгрыш на 3000 тысячи рублей.Мы
+                                            рассчитываем, что такой значительный приз привлечет внимание людей и
+                                            позволит
+                                            нам представить наши услуги новой аудитории. Кроме того, мы считаем,
+                                            что это отличный способ показать нашу щедрость и заботу о наших клиентах,
+                                            которые уже пользуются нашими услугами.</p>
+                                        <p class="card-text"><small class="text-muted">Последнее обновление 3 мин.
+                                            назад</small>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+

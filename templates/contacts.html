@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block Content %}
+    {% load static %}
+    <div class="wrapper">
+        <div class="bg-light">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">ZEON - Компьютерный клуб
+                    </h1>
+                    <p class="lead">Мы создаем киберспортивную среду для качественного отдыха, тренировок и проведения
+                        кибер-мероприятий.</p>
+
+                </div>
+            </div>
+        </div>
+        </header>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Контакты</h1>
+                    <p>Если у вас есть вопросы или предложения, пожалуйста, свяжитесь с нами через форму обратной связи
+                        или по
+                        телефону.</p>
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Ваше имя</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Ваш email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Сообщение</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="mb-4">Контакты</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="bi bi-geo-alt-fill me-2"></i>г. Чита ул. Красноярская, 32а ст. 1, 2-й этаж,</li>
+                        <li><i class="bi bi-telephone-fill me-2"></i>+7 (914) 368-00-00</li>
+                        <li><i class="bi bi-envelope-fill me-2"></i>info@zeon.club</li>
+
+                    </ul>
+                    <h4 class="mb-4">Наши данные для связи</h4>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="" class="me-3"><i class="bi bi-telephone"
+                                                       style="font-size: 30px; color: black "></i></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/zeon.cyberarena.chita/" class="me-3"><i
+                                class="bi bi-instagram"
+                                style="font-size: 30px; color: black "></i></a>
+                        </li>
+                        <li><a href="#" class="me-3"><i class="bi bi-telegram "
+                                                        style="font-size: 30px; color: black "></i></a>
+                        </li>
+                        <li><a href="https://vk.com/zeon.club"><img src="images/vk.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+

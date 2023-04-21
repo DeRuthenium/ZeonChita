@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block Content %}
+    {% load static  %}
+<main>
+    <div class="bg-white">
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Наши тарифы</h2>
+        <div class="row">
+            {% for tarif in tarifs %}
+            <div class="col-12 col-md-3">
+                <div class="card text-center" >
+                    <img src="{{ tarif.image.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title ">{{ tarif.nazvanie }}</h5>
+                        <p class="card-text">{{ tarif.opisanie }}</p>
+                        <a href="pred_pokupka.html" class="btn btn-primary">Рассчитать цену</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+        </div>
+</main>
+{% endblock %}
+
+
